@@ -1,0 +1,96 @@
+#sectionUserP3{
+    width: 100%;
+    right: 0px;
+    height: 7.2%;
+    position: absolute;
+    top: -1px;
+    background-color: #cccccc;
+    padding: 0px;
+}
+
+#logoThoChaP3{
+    width: 160px;
+    position: relative;
+    bottom: 8px;
+}
+
+#userP3{
+    float: right;
+    position: relative;
+    right: 2%;
+    bottom: 82px;
+    padding: 19px 69px;
+    background-color: #ddd;
+    text-align: center;
+    overflow: hidden;
+}
+
+#userP3:hover {
+    height: 100.5px;
+}
+
+#nomeUserP3{
+    font-size: 19px;
+}
+
+#divConfiguracaoP3{
+    position: absolute;
+    right: 0px;
+    top: 61px;
+    width: 100%;
+    background-color: #999999;
+    padding: 19px 0px;
+}
+
+#labelOpcaoP3{
+    bottom: 6px;
+    position: relative;
+}
+
+#labelOpcaoP3:hover{
+    cursor: pointer;
+    color: #0000cc;
+}
+
+#labelSairP3{
+    position: relative;
+    top: 5px;
+}
+
+#labelSairP3:hover{
+    cursor: pointer;
+    color: #0000cc;
+}
+
+
+#clearP3{
+    clear: left;
+    clear: right;
+}
+
+#sectionProdutosP3{
+    position: absolute;
+    width: 430px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #cccccc;
+    padding: 10px;
+}
+
+.linkP3{
+    cursor: pointer;
+}
+
+#iconCalendarEventP3{
+    float: left;
+    width: 80px;
+    position: relative;
+    left: 135px;
+    bottom: 10px;
+}
+
+#logoCalendarEventP3{
+    width: 350px;
+}
+

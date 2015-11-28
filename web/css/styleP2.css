@@ -1,0 +1,109 @@
+#sectionNewContaP2{
+    position: absolute;
+    width: 470px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #cccccc;
+    padding: 10px;
+}
+
+#logoThoChaP2{
+    width: 300px;
+    position: absolute;
+    top: 11%;
+    left: 41%;
+}
+
+#clearP2{
+    clear: left;
+}
+
+#nomeP2, #sobrenomeP2, #passwordSenhaP2, #passwordConfirmeSenhaP2, #emailP2, #celularP2, #selectSexoP2{
+    display: block;
+    border: none;
+    width: 98%;
+    margin: 5px 0px 10px;
+    padding: 2% 0%;
+    padding-left: 2%;
+}
+
+#nomeP2{
+    width: 47%;
+    float: left;
+    margin: 5px 0px 10px;
+    padding: 2% 0%;
+    padding-left: 2%;
+    vertical-align: bottom;
+    margin-right: 2%; 
+}
+
+#sobrenomeP2{
+    width: 47%;
+    float: left;
+    margin: 5px 0px 10px;
+    padding: 2% 0%;
+    padding-left: 2%;
+}
+
+#passwordSenhaP2{
+    width: 47%;
+    float: left;
+    margin: 5px 0px 10px;
+    padding: 2% 0%;
+    padding-left: 2%;
+    margin-right: 2%;
+}
+
+#passwordConfirmeSenhaP2{
+    width: 47%;
+    float: left;
+    margin: 5px 0px 10px;
+    padding: 2% 0%;
+    padding-left: 2%;
+}
+
+#diaP2, #mesP2, #anoP2{
+    display: block;
+    border: none;
+    width: 30%;
+    float: left;
+    margin: 5px 0px 10px;
+    padding: 2% 0%;
+    padding-left: 2%; 
+}
+
+#diaP2, #mesP2{
+    margin-right: 2%;
+}
+
+#selectSexoP2{
+    border: none;
+}
+
+#sexoP2{
+    display: none;
+}
+
+label{
+    font-weight: bold;
+}
+
+#voltarP2{
+    margin-right: 2%;
+}
+
+.botaoP2{
+    display: block;
+    width: 49%;
+    float: left;
+    cursor: pointer;
+    margin: 5px 0px 10px;
+    padding: 2% 0%;
+    border: none;
+}
+
+.botaoP2:hover{
+    background-color: #333333;
+    color: #fff;
+}

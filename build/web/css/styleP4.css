@@ -1,0 +1,73 @@
+#sectionUserP4{
+    width: 100%;
+    right: 0px;
+    height: 7.2%;
+    position: absolute;
+    top: -1px;
+    background-color: #cccccc;
+    padding: 0px;
+}
+
+#logoCalendarP4{
+    width: 160px;
+    position: relative;
+    bottom: 10px;
+}
+
+#userP4{
+    float: right;
+    position: relative;
+    right: 2%;
+    bottom: 86px;
+    padding: 19px 69px;
+    background-color: #ddd;
+    text-align: center;
+    overflow: hidden;
+}
+
+#userP4:hover {
+    height: 100.5px;
+}
+
+#nomeUserP4{
+    font-size: 19px;
+}
+
+#divConfiguracaoP4{
+    position: absolute;
+    right: 0px;
+    top: 61px;
+    width: 100%;
+    background-color: #999999;
+    padding: 19px 0px;
+}
+
+#labelOpcaoP4{
+    bottom: 6px;
+    position: relative;
+}
+
+#labelOpcaoP4:hover{
+    cursor: pointer;
+    color: #0000cc;
+}
+
+#labelSairP4{
+    position: relative;
+    top: 5px;
+}
+
+#labelSairP3:hover{
+    cursor: pointer;
+    color: #0000cc;
+}
+
+#clearP4{
+    clear: left;
+    clear: right;
+}
+
+#sectionCalendarP4{
+    position: relative;
+    top: 150px;
+}

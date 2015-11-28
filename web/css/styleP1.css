@@ -1,0 +1,93 @@
+#sectionLoginP1{
+    position: absolute;
+    width: 430px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #cccccc;
+    padding: 10px;
+    text-align: center;
+}
+
+#logoThoChaP1{
+    width: 300px;
+    position: absolute;
+    top: 32%;
+    left: 41%;
+}
+
+#nameLoginP1, #passwordSenhaP1{
+    display: block;
+    border: none;
+}
+
+#nameLoginP1{
+    width: 47%;
+    float: left;
+    margin: 5px 0px 10px;
+    padding: 2% 0%;
+    padding-left: 2%;
+    vertical-align: bottom;
+    margin-right: 2%;
+}
+
+#passwordSenhaP1{
+    width: 47%;
+    float: left;
+    margin: 5px 0px 10px;
+    padding: 2% 0%;
+    padding-left: 2%;
+}
+
+#clearP1{
+    clear: left;
+}
+
+#divBotaoP1, #botaoEntrarP1{
+    display: block;
+    border: none;
+}
+
+#divBotaoP1{
+    width: 47%;
+    float: left;
+    margin: 5px 0px 10px;
+    padding: 2% 0%;
+    padding-left: 2%;
+    vertical-align: bottom;
+    margin-right: 2%;
+}
+
+#erroLoginP1{
+    color: #ff3333;
+}
+
+#erroLoginP1{
+    display: none;
+}
+
+#botaoEntrarP1{
+    width: 49%;
+    float: left;
+    margin: 5px 0px 10px;
+    padding: 2% 0%;
+    cursor: pointer;
+}
+
+#botaoEntrarP1:hover{
+    background-color: #333333;
+    color: #fff;
+}
+
+#hrefNovaContaP1{
+    text-decoration: none;
+    color: #427fed;
+    position: absolute;
+    top: 58%;
+    left: 47%;
+}
+
+#hrefNovaContaP1:hover{
+    text-decoration: underline;
+    color: #0000cc;
+}
