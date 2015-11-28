@@ -78,6 +78,44 @@
 }
 
 #sectionCalendarP4{
-    position: relative;
-    top: 150px;
+    position: absolute;
+    width: 400px;
+    top: 260%;
+    left: 36%;
+    background-color: #cccccc;
+    padding: 10px;
+}
+
+#inputDataP4, #inputCategoriaP4, #inputTituloP4, #inputDescicaoP4{
+    display: block;
+    border: none;
+    width: 98%;
+    margin: 5px 0px 10px;
+    padding: 2% 0%;
+    padding-left: 2%;
+}
+
+#inputDescicaoP4{
+    margin: 5px 0px 10px;
+    padding: 10% 0%;
+    padding-left: 2%;
+}
+
+#voltarP4{
+    margin-right: 2%;
+}
+
+.botaoP4{
+    display: block;
+    width: 49%;
+    float: left;
+    cursor: pointer;
+    margin: 5px 0px 10px;
+    padding: 2% 0%;
+    border: none;
+}
+
+.botaoP4:hover{
+    background-color: #333333;
+    color: #fff;
 }

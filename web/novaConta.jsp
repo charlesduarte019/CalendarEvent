@@ -142,11 +142,15 @@
                 <label for="celularP2">Celular</label>
                 <input type="text" name="celular" id="celularP2" maxlength="15" placeholder="XX XXXXX-XXXX" autocomplete="off" onblur="campoVazio('celularP2')" required="required"/>
 
+                <div id="reCaptchaP2" class="g-recaptcha" data-theme="dark" data-sitekey="6LcePAATAAAAAGPRWgx90814DTjgt5sXnNbV5WaW"></div>
+                
                 <input type="button" onclick="window.location = 'index.jsp'" value="Voltar" id="voltarP2" class="botaoP2" />
                 <input type="submit" value="Entrar" id="entrarP2" class="botaoP2" />
 
             </form>
-
+            
+            <script src='https://www.google.com/recaptcha/api.js?hl=pt-BR'></script>
+            
         </section>
 
     </body>

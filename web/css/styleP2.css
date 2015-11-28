@@ -1,7 +1,7 @@
 #sectionNewContaP2{
     position: absolute;
     width: 470px;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #cccccc;
@@ -106,4 +106,9 @@ label{
 .botaoP2:hover{
     background-color: #333333;
     color: #fff;
+}
+
+#reCaptchaP2{
+    position: relative;
+    left: 89px;
 }
