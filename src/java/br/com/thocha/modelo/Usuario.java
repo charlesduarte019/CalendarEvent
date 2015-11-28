@@ -13,8 +13,18 @@ public class Usuario {
     private String dataNascimento;
     private String sexo;
     private String celular;
+    
+    private String novaSenha;
 
     public Usuario(){
+    }
+
+    public String getNovaSenha() {
+        return novaSenha;
+    }
+
+    public void setNovaSenha(String novaSenha) {
+        this.novaSenha = novaSenha;
     }
     
      public String getUserLogin() {

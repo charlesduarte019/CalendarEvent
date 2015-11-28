@@ -1,0 +1,63 @@
+#sectionLoginP6{
+    position: absolute;
+    width: 430px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #cccccc;
+    padding: 10px;
+    text-align: center;
+}
+
+#logoThoChaP6{
+    width: 300px;
+    position: absolute;
+    top: 32%;
+    left: 41%;
+}
+
+#nameLoginP6, #passwordSenhaP6{
+    display: block;
+    border: none;
+}
+
+#nameLoginP6{
+    width: 47%;
+    float: left;
+    margin: 5px 0px 10px;
+    padding: 2% 0%;
+    padding-left: 2%;
+    vertical-align: bottom;
+    margin-right: 2%;
+}
+
+#passwordSenhaP6{
+    width: 47%;
+    float: left;
+    margin: 5px 0px 10px;
+    padding: 2% 0%;
+    padding-left: 2%;
+}
+
+#clearP6{
+    clear: left;
+}
+
+#voltarP6{
+    margin-right: 2%;
+}
+
+.botaoP6{
+    display: block;
+    width: 49%;
+    float: left;
+    cursor: pointer;
+    margin: 5px 0px 10px;
+    padding: 2% 0%;
+    border: none;
+}
+
+.botaoP6:hover{
+    background-color: #333333;
+    color: #fff;
+}

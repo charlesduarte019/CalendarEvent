@@ -1,6 +1,7 @@
 package br.com.thocha.dao.jdbc;
 
 import br.com.thocha.modelo.Usuario;
+import com.sun.org.apache.xerces.internal.util.FeatureState;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -40,16 +41,15 @@ public class UsuarioConexao {
         }
     }
 
-    public boolean buscarUser(Usuario user) throws SQLException {
-        System.out.println("Este é o metodo buscarUser");
+    public boolean buscarUserLogin(String login, String senha) throws SQLException {
         Connection con = new ConnectionFactory().getConnection();
 
         try {
             Statement estado = con.createStatement();
-            ResultSet resultado = estado.executeQuery("SELECT email, senha FROM apis.usuario WHERE email = '" + user.getUserLogin() + "'");
+            ResultSet resultado = estado.executeQuery("SELECT email, senha FROM apis.usuario WHERE email = '" + login + "'");
 
             while (resultado.next()) {
-                if (resultado.getString("email").equals(user.getUserLogin()) && resultado.getString("senha").equals(user.getSenhaLogin())) {
+                if (resultado.getString("email").equals(login) && resultado.getString("senha").equals(senha)) {
                     return true;
                 }
             }
@@ -60,9 +60,8 @@ public class UsuarioConexao {
         }
         return false;
     }
-    
+
     public String retornaUserLogin(String login) throws SQLException {
-        System.out.println("Este é o metodo buscarUser");
         Connection con = new ConnectionFactory().getConnection();
 
         try {
@@ -81,5 +80,71 @@ public class UsuarioConexao {
         }
         return null;
     }
-    
+
+    public Usuario retornaCadastroUser(String user) {
+        Connection con = new ConnectionFactory().getConnection();
+        Usuario userReturn = new Usuario();
+
+        try {
+            Statement estado = con.createStatement();
+            ResultSet resultado = estado.executeQuery("SELECT nome, sobrenome, email, datanascimento, sexo, celular  FROM apis.usuario WHERE nome = '" + user + "'");
+
+            while (resultado.next()) {
+                if (resultado.getString("nome").equals(user)) {
+                    userReturn.setNome(user);
+                    userReturn.setSobrenome(resultado.getString("sobrenome"));
+                    userReturn.setEmail(resultado.getString("email"));
+                    userReturn.setDataNascimento(resultado.getString("datanascimento"));
+                    userReturn.setSexo(resultado.getString("sexo"));
+                    userReturn.setCelular(resultado.getString("celular"));
+
+                    return userReturn;
+                }
+            }
+
+        } catch (Exception e) {
+
+        }
+
+        return userReturn;
+    }
+
+    public void updateCadastroUser(Usuario user, String login) throws SQLException {
+        Connection con = new ConnectionFactory().getConnection();
+
+        String nome = user.getNome();
+        String sobrenome = user.getSobrenome();
+        String email = user.getEmail();
+        String senhaAtual = user.getSenha();
+        String novaSenha = user.getNovaSenha();
+        String data = user.getDataNascimento();
+        String sexo = user.getSexo();
+        String celular = user.getCelular();
+
+        try {
+            Statement estado = con.createStatement();
+            if (novaSenha.equals("")) {
+                estado.executeQuery("UPDATE apis.usuario SET nome = '" + nome + "', sobrenome = '" + sobrenome + "', email = '" + email + "', datanascimento = '" + data + "', sexo = '" + sexo + "', celular = '" + celular + "' WHERE nome = '" + login + "' AND senha = '" + senhaAtual + "'");
+            } else {
+                estado.executeQuery("UPDATE apis.usuario SET nome = '" + nome + "', sobrenome = '" + sobrenome + "', email = '" + email + "', senha = '" + novaSenha + "', datanascimento = '" + data + "', sexo = '" + sexo + "', celular = '" + celular + "' WHERE nome = '" + login + "' AND senha = '" + senhaAtual + "'");
+            }
+
+        } catch (Exception e) {
+
+        }
+
+    }
+
+    public void deletarCadastroUser(String user, String email, String senha) throws SQLException {
+        Connection con = new ConnectionFactory().getConnection();
+
+        try {
+            Statement estado = con.createStatement();
+            estado.executeQuery("DELETE FROM apis.usuario WHERE nome = '" + user + "' AND email = '" + email + "' AND senha = '" + senha + "'");
+
+        } catch (Exception e) {
+
+        }
+    }
+
 }

@@ -25,7 +25,7 @@
 
         <section id="sectionLoginP1">
             <form method="post" action="<%= request.getContextPath()%>/ControleUsuarios?action=login">
-                <input type="text" name="login" id="nameLoginP1" placeholder="Informe seu email" autocomplete="off" required="required"/>
+                <input type="email" name="login" id="nameLoginP1" placeholder="Informe seu email" autocomplete="off" required="required"/>
                 <input type="password" name="senhaP1" id="passwordSenhaP1" placeholder="Informe sua Senha" autocomplete="off" required="required"/>
                 <!--<label id="erroLoginP1" class="erroLoginP1" >O e-mail e a senha que você digitou não coincidem!</label>-->
                 <div id="divBotaoP1"></div>

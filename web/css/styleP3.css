@@ -26,7 +26,7 @@
 }
 
 #userP3:hover {
-    height: 100.5px;
+    height: 119.5px;
 }
 
 #nomeUserP3{
@@ -43,8 +43,8 @@
 }
 
 #labelOpcaoP3{
-    bottom: 6px;
     position: relative;
+    bottom: 6px;
 }
 
 #labelOpcaoP3:hover{
@@ -52,9 +52,19 @@
     color: #0000cc;
 }
 
+#labelEcluirP3{
+    position: relative;
+    top: 4px;
+}
+
+#labelEcluirP3:hover{
+    cursor: pointer;
+    color: #0000cc;
+}
+
 #labelSairP3{
     position: relative;
-    top: 5px;
+    top: 11px;
 }
 
 #labelSairP3:hover{

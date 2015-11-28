@@ -16,6 +16,8 @@
 
         <title>ThoCha</title>
 
+        
+        
     </head>
 
     <body>
@@ -29,6 +31,8 @@
                 <label id="nomeUserP3"> <%= request.getSession().getAttribute("userLogin")%> </label>
                 <div id="divConfiguracaoP3">
                     <label id="labelOpcaoP3" onclick="window.location = 'configuracao.jsp'" >Configuração</label>
+                    <br>
+                    <label id="labelEcluirP3" onclick="window.location = 'excluirUser.jsp'" >Excluir conta</label>
                     <br>
                     <label id="labelSairP3" onclick="window.location = 'index.jsp'" >Sair</label>
                 </div>

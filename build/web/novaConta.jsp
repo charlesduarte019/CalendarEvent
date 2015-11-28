@@ -97,7 +97,7 @@
 
                 <label for="nomeP2">Nome</label>
                 <div id="clearP2"></div>
-                <input type="text" name="nome" value="" id="nomeP2" placeholder="Nome" maxlength="25" autocomplete="off" onblur="campoVazio('nomeP2')" required="required"/>
+                <input type="text" name="nome"  id="nomeP2" placeholder="Nome" maxlength="25" autocomplete="off" onblur="campoVazio('nomeP2')" required="required"/>
                 <input type="text" name="sobrenome" id="sobrenomeP2" placeholder="Sobrenome" maxlength="25" autocomplete="off" onblur="campoVazio('sobrenomeP2')" required="required"/>
                 <div id="clearP2"></div>
 

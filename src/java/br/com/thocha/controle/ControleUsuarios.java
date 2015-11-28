@@ -27,6 +27,8 @@ public class ControleUsuarios extends HttpServlet {
 
     private static String userLogin;
     private boolean userErro = false;
+
+    private Usuario newUser;
     private UsuarioConexao userConexao;
 
     private static final Logger LOG = Logger.getLogger(ControleUsuarios.class.getName());
@@ -90,7 +92,6 @@ public class ControleUsuarios extends HttpServlet {
         String action = request.getParameter("action");
         String paginaRequest = null, login, senhaAcesso;
 
-        Usuario newUser = new Usuario();
         userConexao = new UsuarioConexao();
 
         if (action.equals("login")) {
@@ -98,48 +99,41 @@ public class ControleUsuarios extends HttpServlet {
             login = request.getParameter("login");
             senhaAcesso = request.getParameter("senhaP1");
 
-            newUser.setUserLogin(login);
-            newUser.setSenhaLogin(senhaAcesso);
-
+//            newUser.setUserLogin(login);
+//            newUser.setSenhaLogin(senhaAcesso);
             try {
-                if (userConexao.buscarUser(newUser)) {
+                if (userConexao.buscarUserLogin(login, senhaAcesso)) {
                     userLogin = userConexao.retornaUserLogin(login);
-                    session.setAttribute("userLogin", userLogin);
+                    newUser = new Usuario();
+                    newUser = userConexao.retornaCadastroUser(userLogin);
 
                     userErro = false;
-
                     paginaRequest = "produtosThoCha.jsp";
                 } else {
                     userErro = true;
-
                     paginaRequest = "index.jsp";
                 }
-                session.setAttribute("userErroM", userErro);
+//                session.setAttribute("userErroM", userErro);
             } catch (SQLException ex) {
                 out.println("Não foi possivel encontrar o usuario!");
             }
 
         } else {
 
-            String nome = request.getParameter("nome");
-            String sobrenome = request.getParameter("sobrenome");
-            String email = request.getParameter("email");
-            String senha = request.getParameter("senha");
-            String confirmeSenha = request.getParameter("confirmeSenha");
-            String dataNascimento = (request.getParameter("dia") + "/" + request.getParameter("mes") + "/" + request.getParameter("ano"));
-            String sexo = request.getParameter("sexo");
-            String celular = request.getParameter("celular");
-
-            newUser.setNome(nome);
-            newUser.setSobrenome(sobrenome);
-            newUser.setEmail(email);
-            newUser.setSenha(senha);
-            newUser.setConfirmeSenha(confirmeSenha);
-            newUser.setDataNascimento(dataNascimento);
-            newUser.setSexo(sexo);
-            newUser.setCelular(celular);
-
             if (action.equals("cadastrar")) {
+
+                String dataNascimento = (request.getParameter("dia") + "/" + request.getParameter("mes") + "/" + request.getParameter("ano"));
+
+                newUser = new Usuario();
+                newUser.setNome(request.getParameter("nome"));
+                newUser.setSobrenome(request.getParameter("sobrenome"));
+                newUser.setEmail(request.getParameter("email"));
+                newUser.setSenha(request.getParameter("senha"));
+                newUser.setConfirmeSenha(request.getParameter("confirmeSenha"));
+                newUser.setDataNascimento(dataNascimento);
+                newUser.setSexo(request.getParameter("sexo"));
+                newUser.setCelular(request.getParameter("celular"));
+
                 try {
                     userLogin = newUser.getNome();
                     userConexao.inserir(newUser);
@@ -148,8 +142,57 @@ public class ControleUsuarios extends HttpServlet {
                 } catch (SQLException ex) {
                     out.println("Não foi possivel salvar!");
                 }
+
+            } else {
+                if (action.equals("opcaoConfiguracao")) {
+
+                    newUser = new Usuario();
+                    newUser.setNome(request.getParameter("nome"));
+                    newUser.setSobrenome(request.getParameter("sobrenome"));
+                    newUser.setEmail(request.getParameter("email"));
+                    newUser.setSenha(request.getParameter("senhaAtual"));
+                    newUser.setNovaSenha(request.getParameter("newSenha"));
+                    newUser.setDataNascimento(request.getParameter("dataUser"));
+                    newUser.setSexo(request.getParameter("sexo"));
+                    newUser.setCelular(request.getParameter("celular"));
+
+                    try {
+                        userLogin = newUser.getNome();
+                        userConexao.updateCadastroUser(newUser, userLogin);
+                        newUser = userConexao.retornaCadastroUser(userLogin);
+                        paginaRequest = "produtosThoCha.jsp";
+                    } catch (SQLException ex) {
+                        out.println("Não foi possivel salvar!");
+                    }
+
+                }else{
+                    if(action.equals("excluirUser")){
+                        
+                        try {
+                            String user = request.getParameter("loginP6");
+                            String senhaUser = request.getParameter("senhaP6");
+                            
+                            userConexao.deletarCadastroUser(userLogin, user, senhaUser);
+                        
+                        
+                        paginaRequest = "index.jsp";
+                        
+                    } catch (SQLException ex) {
+                        out.println("Não foi possivel salvar!");
+                    }
+                        
+                    }
+                }
             }
         }
+
+        session.setAttribute("userLogin", userLogin);
+        session.setAttribute("opcaoNome", newUser.getNome());
+        session.setAttribute("opcaoSobrenome", newUser.getSobrenome());
+        session.setAttribute("opcaoEmail", newUser.getEmail());
+        session.setAttribute("opcaoData", newUser.getDataNascimento());
+        session.setAttribute("opcaoSexo", newUser.getSexo());
+        session.setAttribute("opcaoCelular", newUser.getCelular());
 
         response.sendRedirect(paginaRequest);
 

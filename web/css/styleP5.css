@@ -1,0 +1,48 @@
+#sectionNewContaP5{
+    position: absolute;
+    width: 470px;
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #cccccc;
+    padding: 10px;
+}
+
+#logoThoChaP5{
+    width: 300px;
+    position: absolute;
+    top: 9%;
+    left: 41%;
+}
+
+#clearP5{
+    clear: left;
+}
+
+#inputNomeP5, #inputSobrenomeP5, #inputEmailP5, #inputDataP5, #inputSexoP5, #inputCelularP5, #inputSenhaAtualP5, #inputNewSenhaP5{
+    display: block;
+    border: none;
+    width: 98%;
+    margin: 5px 0px 10px;
+    padding: 2% 0%;
+    padding-left: 2%;
+}
+
+#voltarP5{
+    margin-right: 2%;
+}
+
+.botaoP5{
+    display: block;
+    width: 49%;
+    float: left;
+    cursor: pointer;
+    margin: 5px 0px 10px;
+    padding: 2% 0%;
+    border: none;
+}
+
+.botaoP5:hover{
+    background-color: #333333;
+    color: #fff;
+}
